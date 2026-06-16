@@ -27,7 +27,7 @@ def get_classification():
 
 @app.get("/player/{player_id}/stats", response_model=PlayerSeasonStats)
 def get_stats(player_id: int):
-    if player_id in cache_players.keys():
+    if player_id in cache_players:
         return cache_players.get(player_id)
     
     try:
